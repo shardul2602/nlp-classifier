@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Result</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📧 Spam Mail Classifier</h1>
+        <p>Natural Language Processing using Multinomial Naive Bayes</p>
+    </header>
+
+    <main class="result-container">
+
+        <h2>Classification Result</h2>
+
+        <div class="message-box">
+            <h3>Analyzed Message</h3>
+            <p>{{ message }}</p>
+        </div>
+
+        {% if prediction == 1 %}
+            <div class="result spam">
+                <h2>🚨 Spam Message</h2>
+                <p>This message has been classified as spam.</p>
+            </div>
+
+        {% elif prediction == 0 %}
+            <div class="result legitimate">
+                <h2>✅ Legitimate Message</h2>
+                <p>This message has been classified as not spam.</p>
+            </div>
+        {% endif %}
+
+        <a href="/" class="back-button">← Analyze Another Message</a>
+
+    </main>
+
+</body>
+</html>
